@@ -134,7 +134,7 @@ class AnimatedButton extends StatefulWidget {
 
   ///[child] when animated
   /// By Default value [Text] is used you can you the child
-  final Widget? child:
+  final Widget? child;
 
   const AnimatedButton({
     Key? key,
