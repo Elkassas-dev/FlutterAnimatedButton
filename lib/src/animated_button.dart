@@ -132,10 +132,15 @@ class AnimatedButton extends StatefulWidget {
   /// By Default value [AnimatedOn.onTap]
   final AnimatedOn animatedOn;
 
+  ///[child] when animated
+  /// By Default value [Text] is used you can you the child
+  final Widget? child:
+
   const AnimatedButton({
     Key? key,
     required this.text,
     required this.onPress,
+    this.child,
     this.transitionType = TransitionType.LEFT_TO_RIGHT,
     this.textStyle = const TextStyle(color: Colors.white, fontSize: 20),
     this.selectedTextColor = Colors.blue,
@@ -167,6 +172,7 @@ class AnimatedButton extends StatefulWidget {
     Key? key,
     required this.text,
     required this.onPress,
+    this.child,
     this.isReverse = false,
     this.height = 50,
     this.width = double.infinity,
@@ -287,7 +293,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
                   textAlignment: widget.textAlignment,
                 )
               : Align(
-                  child: textNormal,
+                  child: widget.child ?? textNormal,
                   alignment: widget.textAlignment,
                 ),
         ),
